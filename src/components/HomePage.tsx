@@ -45,7 +45,7 @@ function Hero() {
 }
 
 function ProductCard({ product, onAdd, featured = false }: { product: Product; onAdd: (product: Product) => void; featured?: boolean }) {
-  return <article className={`product-card ${featured ? "product-card--featured" : ""}`}><div className="product-image"><img src={product.image} alt={product.name + " pizza and ingredients"} width="768" height="768" loading="lazy"/>{featured && <span className="product-badge">HOUSE FAVORITE</span>}</div><div className="product-details"><div className="product-top"><h3>{product.name}</h3><strong>{money(product.price)}</strong></div><p>{product.description}</p><Button variant="fire" onClick={() => onAdd(product)} aria-label={`Add ${product.name} to cart`}>ADD TO CART <Plus size={17}/></Button></div></article>;
+  return <article className={`product-card ${featured ? "product-card--featured" : ""}`}><div className="product-image"><img src={product.image} alt={`${product.name} from Ember & Crust`} width="768" height="768" loading="lazy"/>{featured && <span className="product-badge">HOUSE FAVORITE</span>}</div><div className="product-details"><div className="product-top"><h3>{product.name}</h3><strong>{money(product.price)}</strong></div><p>{product.description}</p><Button variant="fire" onClick={() => onAdd(product)} aria-label={`Add ${product.name} to cart`}>ADD TO CART <Plus size={17}/></Button></div></article>;
 }
 
 function Bestsellers({ onAdd, onBrowse }: { onAdd: (product: Product) => void; onBrowse: () => void }) {

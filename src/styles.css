@@ -271,6 +271,7 @@ h2 { font-size: clamp(43px, 5vw, 67px); }
 .footer-grid h3 { font-family: var(--font-sans); font-size: 11px; letter-spacing: .15em; color: var(--gold); margin: 7px 0 23px; }
 .footer-grid p,.footer-grid a:not(.brand) { display: block; font-size: 12px; line-height: 1.85; color: color-mix(in oklab,var(--inverse) 70%,transparent); margin: 0 0 8px; }
 .footer-grid a:not(.brand):hover { color: var(--primary); }
+.footer-grid a:not(.brand) { overflow-wrap: anywhere; }
 .footer-socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; text-transform: capitalize; }
 .footer-bottom { border-top: 1px solid var(--line-light); padding-top: 23px; display: flex; justify-content: space-between; gap: 16px; color: color-mix(in oklab,var(--inverse) 48%,transparent); font-size: 10px; letter-spacing: .1em; }
 /* Cart drawer */
@@ -381,6 +382,7 @@ h2 { font-size: clamp(43px, 5vw, 67px); }
  .delivery-copy-inner { width: min(100% - 16px,500px); margin: auto; }
  .menu-tools { display: block; }
  .filter-list { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 10px; margin-bottom: 12px; }
+ .filter-list { max-width: 100%; }
  .filter-button { flex-shrink: 0; }
  .menu-search { width: 100%; }
  .menu-search input { width: 100%; }
