@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-TanStack Start produces a server-rendered application in `.output/`. On Hostinger, use a hosting plan that supports a persistent Node.js application (not static-only shared hosting). Deploy the project files, install dependencies, run `npm run build`, and configure the app process to start the generated server (`node .output/server/index.mjs`). Set the port through Hostinger's environment configuration. There is only one public page (`/`), with section links, so deep-link rewrite rules are not needed. If your Hostinger plan only hosts static files, this server-rendered project needs conversion to a static Vite SPA before it can be hosted there; uploading `.output/` as static files will not work. Test this on your chosen plan before launch.
+TanStack Start produces a server-rendered application in `.output/`. On Hostinger, use a hosting plan that supports a persistent Node.js application (not static-only shared hosting). Deploy the project files, install dependencies, run `npm run build`, and configure the app process to start the generated server (`node .output/server/index.mjs`). Set the port through Hostinger's environment configuration. Direct visits to `/privacy` and `/terms` work through the server. If your Hostinger plan only hosts static files, this server-rendered project needs conversion to a static Vite SPA before it can be hosted there; uploading `.output/` as static files will not work. Test this on your chosen plan before launch.
 
 ## Customize
 

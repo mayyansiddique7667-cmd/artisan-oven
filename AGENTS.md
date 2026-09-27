@@ -11,4 +11,5 @@
 
 - Keep restaurant content, contact details, menu, and builder prices in `src/lib/restaurant.ts` so fictional client data can be replaced in one place.
 - Keep this as a single SSR route with in-page section links because the requested navigation is one continuous restaurant experience.
+- Keep legal disclosures on their own SSR routes so footer policy links have standalone readable pages.
 - Do not claim checkout or newsletter delivery is live: both are intentionally local UI flows until a real service is connected.
