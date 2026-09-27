@@ -274,7 +274,7 @@ h2 { font-size: clamp(43px, 5vw, 67px); }
 .footer-socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; text-transform: capitalize; }
 .footer-bottom { border-top: 1px solid var(--line-light); padding-top: 23px; display: flex; justify-content: space-between; gap: 16px; color: color-mix(in oklab,var(--inverse) 48%,transparent); font-size: 10px; letter-spacing: .1em; }
 /* Cart drawer */
-.cart-layer { position: fixed; inset: 0; z-index: 100; pointer-events: none; visibility: hidden; transition: visibility .3s; }
+.cart-layer { position: fixed; inset: 0; z-index: 100; pointer-events: none; visibility: hidden; overflow: clip; transition: visibility .3s; }
 .cart-layer.is-open { pointer-events: auto; visibility: visible; }
 .cart-scrim { position: absolute; inset: 0; background: color-mix(in oklab,var(--charcoal) 68%,transparent); opacity: 0; transition: opacity .3s; }
 .is-open .cart-scrim { opacity: 1; }

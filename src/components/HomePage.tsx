@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, ChevronRight, Clock3, Flame, Heart, MapPin, Menu as MenuIcon, Minus, Phone, Plus, Search, ShoppingBag, Truck, UtensilsCrossed, X } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, Clock3, Flame, Heart, MapPin, Menu as MenuIcon, Phone, Plus, Search, ShoppingBag, Truck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Brand } from "@/components/Brand";
 import { CartDrawer, type CartItem } from "@/components/CartDrawer";
@@ -109,9 +109,9 @@ export function HomePage() {
   const [items, setItems] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [category, setCategory] = useState("All");
-  useEffect(() => { try { const saved = localStorage.getItem("ember-crust-cart"); if (saved) { const parsed: unknown = JSON.parse(saved); if (Array.isArray(parsed)) setItems(parsed.filter(x => x && typeof x.key === "string" && typeof x.price === "number" && typeof x.quantity === "number")); } } catch { /* Ignore invalid saved carts. */ } }, []);
-  useEffect(() => { if (typeof window !== "undefined" && document.documentElement.dataset.cartLoaded === "yes") localStorage.setItem("ember-crust-cart", JSON.stringify(items)); }, [items]);
-  useEffect(() => { document.documentElement.dataset.cartLoaded = "yes"; }, []);
+  const [cartLoaded, setCartLoaded] = useState(false);
+  useEffect(() => { try { const saved = localStorage.getItem("ember-crust-cart"); if (saved) { const parsed: unknown = JSON.parse(saved); if (Array.isArray(parsed)) setItems(parsed.filter(x => x && typeof x.key === "string" && typeof x.price === "number" && typeof x.quantity === "number")); } } catch { /* Ignore invalid saved carts. */ } setCartLoaded(true); }, []);
+  useEffect(() => { if (cartLoaded) localStorage.setItem("ember-crust-cart", JSON.stringify(items)); }, [items, cartLoaded]);
   const addItem = useCallback((item: CartItem) => { setItems(current => { const exists = current.find(x => x.key === item.key); return exists ? current.map(x => x.key === item.key ? { ...x, quantity: x.quantity + 1 } : x) : [...current, item]; }); setCartOpen(true); }, []);
   const addProduct = useCallback((product: Product) => addItem({ key: product.id, name: product.name, price: product.price, image: product.image, quantity: 1 }), [addItem]);
   const update = useCallback((key: string, delta: number) => setItems(current => current.map(x => x.key === key ? { ...x, quantity: x.quantity + delta } : x).filter(x => x.quantity > 0)), []);
