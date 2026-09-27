@@ -274,6 +274,19 @@ h2 { font-size: clamp(43px, 5vw, 67px); }
 .footer-grid a:not(.brand) { overflow-wrap: anywhere; }
 .footer-socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; text-transform: capitalize; }
 .footer-bottom { border-top: 1px solid var(--line-light); padding-top: 23px; display: flex; justify-content: space-between; gap: 16px; color: color-mix(in oklab,var(--inverse) 48%,transparent); font-size: 10px; letter-spacing: .1em; }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 18px; }
+.footer-legal a:hover { color: var(--gold); }
+.legal-page { min-height: 100svh; display: flex; flex-direction: column; }
+.legal-header { background: var(--charcoal); }
+.legal-header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.legal-header-inner > a:last-child { color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.legal-main { padding-block: 90px 120px; flex: 1; }
+.legal-main h1 { font-size: clamp(54px, 8vw, 96px); margin: 15px 0 34px; }
+.legal-copy { max-width: 700px; color: var(--muted-foreground); line-height: 1.8; font-size: 15px; }
+.legal-copy h2 { color: var(--foreground); font-size: 28px; margin: 34px 0 10px; }
+.legal-copy a { text-decoration: underline; color: var(--burgundy); overflow-wrap: anywhere; }
+.legal-footer { padding-block: 28px; background: var(--charcoal); color: var(--inverse); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.legal-footer .container { display: flex; justify-content: space-between; gap: 20px; }
 /* Cart drawer */
 .cart-layer { position: fixed; inset: 0; z-index: 100; pointer-events: none; visibility: hidden; overflow: clip; transition: visibility .3s; }
 .cart-layer.is-open { pointer-events: auto; visibility: visible; }
@@ -405,6 +418,9 @@ h2 { font-size: clamp(43px, 5vw, 67px); }
  .footer-grid > div:first-child { grid-column: 1 / -1; }
  .footer-grid > div:last-child { grid-column: 1 / -1; }
  .footer-bottom { flex-direction: column; font-size: 9px; }
+ .legal-header-inner { min-height: 70px; }
+ .legal-header-inner > a:last-child { font-size: 9px; }
+ .legal-main { padding-block: 70px 90px; }
 }
 @media (max-width: 360px) {
  .brand-mark { width: 37px; height: 37px; }
